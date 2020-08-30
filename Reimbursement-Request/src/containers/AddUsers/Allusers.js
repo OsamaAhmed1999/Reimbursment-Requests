@@ -97,7 +97,7 @@ deletereq(req){
 onSave =()=>{
   if(this.state.isdel)
   {
-    axios.delete(`${process.env.REACT_APP_API_URL}/deleteuser/${req.id}`)
+    axios.delete(`${process.env.REACT_APP_API_URL}/deleteuser/${this.state.id}`)
     .then((response) => {
       this.setState({
         error : "",
@@ -123,7 +123,7 @@ onSave =()=>{
     const reqst = {id , password}
 
 
-    axios.put(`http://localhost:8080/updatepass`, reqst)
+    axios.put(`${process.env.REACT_APP_API_URL}/updatepass`, reqst)
     .then((response) => {
 
       this.setState({

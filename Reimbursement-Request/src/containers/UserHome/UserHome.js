@@ -160,16 +160,16 @@ class userhome extends Component{
 
     if(this.state.isdel)
     {
-      axios.delete(`${process.env.REACT_APP_API_URL}/deletereq/${req.id}`)
-    .then((response) => {
+      axios.delete(`${process.env.REACT_APP_API_URL}/deletereq/${this.state.id}`)
+      .then((response) => {
       this.setState({
 
         isdel :false,
         open : "",
+        confirm14:false,
         error : "",
-        id:"",
-        confirm14:false
-  
+        id:""
+
       })
        this.fetchData()
     }, (error) => {
@@ -258,8 +258,6 @@ class userhome extends Component{
         [Name]:event.target.value
       
     })
-
-
 }
 
 search =()=> event =>{
